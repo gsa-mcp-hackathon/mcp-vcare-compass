@@ -1,0 +1,52 @@
+<!--
+  mcp_vcare_eval_0: gold question set for the VCARE CC Compass MCP server.
+
+  Data is 100% synthetic and static, so answers are stable. Every answer was
+  verified twice on 2026-10-30: (1) independently, by SQL over
+  users.anna_fernandez.synthetic_cases / facility_map or by the rule logic, and
+  (2) by solving the question through the MCP tools themselves.
+  Coverage: 5 x ask_vcare_case_data, 2 x get_consult_pathway_checklist,
+  3 x flag_high_risk_case. All read-only.
+-->
+<evaluation>
+   <qa_pair>
+      <question>In the synthetic VA Community Care consult data, which facility has the smallest number of consults carrying the elevated-attention (high-risk) marker? Answer with the full facility name only.</question>
+      <answer>Black Widow Bay VA Medical Center</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>Looking only at consults marked high-risk, which category of care appears most often? Answer with the category name only.</question>
+      <answer>Radiology</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>Which care coordination level has the largest proportion of its consults marked high-risk (by rate, not by raw count)? Answer with the level name only.</question>
+      <answer>Urgent</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>Each consult is assessed on three compliance pillars. Which pillar is failed by the fewest consults? Answer Timeliness, Process, or Care Coordination.</question>
+      <answer>Care Coordination</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>Which facility has the lowest rate of consults that pass every compliance pillar? Answer with the full facility name only.</question>
+      <answer>Thunder Forge VA Medical Center</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>In the standardized consult pathway checklist, exactly one step cites both the VA MISSION Act and the Request for Service SOP. What is that step's label? Answer with the label only.</question>
+      <answer>Schedule</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>Across all steps of the standardized consult pathway checklist, how many distinct authoritative sources are cited? Answer with a number only.</question>
+      <answer>7</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>Screen this synthetic case as of 2026-10-30: case SYN-EVAL-01, Oncology, Urgent coordination level, active consult, last documented nurse action on 2026-10-27. What nurse follow-up threshold, in days, did the screen apply? Answer with a number only.</question>
+      <answer>2</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>Screen this synthetic case as of 2026-10-30: case SYN-EVAL-02, Radiology, Moderate coordination level, active consult, community care authorized 2026-10-01 and initiated 2026-10-05, a complete Request for Services received 2026-10-23, and no decision documented yet. How many business days does the screen count since the complete submission? Answer with a number only.</question>
+      <answer>5</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>Screen this synthetic case as of 2026-10-30: case SYN-EVAL-03, Dental care, Basic coordination level, cancelled consult, Best Medical Interest eligibility with the determination documented 2025-06-02, a second clinical review documented, joint Veteran and clinician agreement documented, cancellation reason 'cost concerns', and service requested 'Dental implants'. How many High-severity flags does the screen return? Answer with a number only.</question>
+      <answer>3</answer>
+   </qa_pair>
+</evaluation>

@@ -1,0 +1,19 @@
+# Databricks Apps runtime config for the VCARE CC Compass MCP server.
+# Databricks reads app.yaml from the root of the deployed source folder, so this
+# copy lives at the repo root (the canonical copy with full notes is in
+# deploy/databricks/app.yaml; keep the two in sync).
+#
+# Endpoints:  https://<app-url>/mcp (streamable HTTP, stateless)
+#             https://<app-url>/health
+#
+# ask_vcare_case_data reads the Genie space ID from the app resource named
+# `genie-space` (CAN RUN); the app also needs `sql-warehouse` (CAN USE).
+command:
+  [
+    "/bin/sh",
+    "-c",
+    "export PYTHONPATH=/app/python/source_code/src:$PYTHONPATH && python -m mcp_vcare_compass.app",
+  ]
+env:
+  - name: GENIE_SPACE_ID
+    valueFrom: genie-space

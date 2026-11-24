@@ -1,0 +1,55 @@
+[project]
+name = "mcp-vcare-compass"
+version = "0.5.0"
+description = "VCARE CC Compass: MCP server for VA Community Care consult and care coordination review (synthetic data)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "anyio>=4.0",
+    # Databricks Apps preinstalls an older SDK; Genie conversation APIs need a
+    # recent one.
+    "databricks-sdk>=0.60",
+    "fastmcp>=3.0,<5",
+    "pydantic>=2.6",
+    "pydantic-settings>=2.0.0",
+]
+
+[project.scripts]
+# Lets you run the server with `uv run mcp-vcare-compass`.
+mcp-vcare-compass = "mcp_vcare_compass.app:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mcp_vcare_compass"]
+
+[dependency-groups]
+# Dev + eval-only deps. Install with `uv sync --group dev`.
+# The Phoenix evaluation harness (see eval/) is not scaffolded in this template
+# on purpose — add these when you build it per the mcp-eval skill.
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.6.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+exclude = [".venv", ".agents"]
+# Don't reformat Python code fences inside Markdown docs (they're illustrative
+# snippets, not runnable modules).
+extend-exclude = ["*.md"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+# Policy text: keep each GEMBA question on one line so reviewers can diff it.
+"src/mcp_vcare_compass/pathway.py" = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

@@ -1,0 +1,12 @@
+# Runtime dependencies (kept in sync with pyproject.toml [project].dependencies).
+#
+# Needed by hosts that do not read pyproject.toml (Databricks Apps, the
+# cloud.gov Python buildpack). Container hosts use the Dockerfile, which
+# installs from pyproject.toml instead.
+anyio>=4.0
+# Databricks Apps preinstalls an older SDK; Genie conversation APIs need a
+# recent one.
+databricks-sdk>=0.60
+fastmcp>=3.0,<5
+pydantic>=2.6
+pydantic-settings>=2.0.0

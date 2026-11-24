@@ -1,0 +1,8 @@
+datasets:
+  mcp_vcare_eval_0:
+    csv_path: datasets/mcp_vcare_eval_0/examples/mcp_vcare_eval_0.csv
+    input_keys:
+      - query
+    output_keys:
+      - responses
+    description: "VCARE CC Compass gold set, 10 questions (5 Genie case data, 2 pathway checklist, 3 case screening); synthetic data, answers verified 2026-10-30"

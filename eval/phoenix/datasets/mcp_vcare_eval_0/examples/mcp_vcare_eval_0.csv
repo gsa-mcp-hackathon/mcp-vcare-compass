@@ -1,0 +1,11 @@
+query,responses
+"In the synthetic VA Community Care consult data, which facility has the smallest number of consults carrying the elevated-attention (high-risk) marker? Answer with the full facility name only.",Black Widow Bay VA Medical Center
+"Looking only at consults marked high-risk, which category of care appears most often? Answer with the category name only.",Radiology
+"Which care coordination level has the largest proportion of its consults marked high-risk (by rate, not by raw count)? Answer with the level name only.",Urgent
+"Each consult is assessed on three compliance pillars. Which pillar is failed by the fewest consults? Answer Timeliness, Process, or Care Coordination.",Care Coordination
+"Which facility has the lowest rate of consults that pass every compliance pillar? Answer with the full facility name only.",Thunder Forge VA Medical Center
+"In the standardized consult pathway checklist, exactly one step cites both the VA MISSION Act and the Request for Service SOP. What is that step's label? Answer with the label only.",Schedule
+"Across all steps of the standardized consult pathway checklist, how many distinct authoritative sources are cited? Answer with a number only.",7
+"Screen this synthetic case as of 2026-10-30: case SYN-EVAL-01, Oncology, Urgent coordination level, active consult, last documented nurse action on 2026-10-27. What nurse follow-up threshold, in days, did the screen apply? Answer with a number only.",2
+"Screen this synthetic case as of 2026-10-30: case SYN-EVAL-02, Radiology, Moderate coordination level, active consult, community care authorized 2026-10-01 and initiated 2026-10-05, a complete Request for Services received 2026-10-23, and no decision documented yet. How many business days does the screen count since the complete submission? Answer with a number only.",5
+"Screen this synthetic case as of 2026-10-30: case SYN-EVAL-03, Dental care, Basic coordination level, cancelled consult, Best Medical Interest eligibility with the determination documented 2025-06-02, a second clinical review documented, joint Veteran and clinician agreement documented, cancellation reason 'cost concerns', and service requested 'Dental implants'. How many High-severity flags does the screen return? Answer with a number only.",3
